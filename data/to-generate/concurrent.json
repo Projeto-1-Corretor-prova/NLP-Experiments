@@ -1,0 +1,57 @@
+{
+    "id": 1,
+    "statement": "Implemente a API abaixo, usando AtomicInteger. Seu código deve ser thread-safe (e obviamente, você não deve usar semáforos e/ou variáveis condicionais)",
+    "question_criteria": [
+        {
+            "id": 1,
+            "type": "KEYWORD",
+            "criteria": "(private|public){0,1}\\s+AtomicInteger\\s+\\D\\w+;"
+        },
+        {
+            "id": 2,
+            "type": "KEYWORD",
+            "criteria": "public\\s+void\\s+increment\\s*\\(\\)\\s*\\{"
+        },
+        {
+            "id": 3,
+            "type": "KEYWORD",
+            "criteria": "public\\s+class\\s+ThreadSafeCounter\\s*\\{"
+        },
+        {
+            "id": 4,
+            "type": "KEYWORD",
+            "criteria": "public\\s+void\\s+decrement\\s*\\(\\)\\s*\\{"
+        },
+        {
+            "id": 5,
+            "type": "KEYWORD",
+            "criteria": "public\\s+void\\s+reset\\s*\\(\\)\\s*\\{"
+        },
+        {
+            "id": 6,
+            "type": "KEYWORD",
+            "criteria": "public\\s+int\\s+getValue\\s*\\(\\)\\s*\\{"
+        },
+        {
+            "id": 7,
+            "type": "KEYWORD",
+            "criteria": "public\\s+boolean\\s+addIfPositive\\s*\\(\\s*int\\s*value\\s*\\)\\s*\\{"
+        },
+        {
+            "id": 8,
+            "type": "SEMANTIC",
+            "criteria": "A operação de incremento, decremento, reset e getValue devem ser thread-safe utilizando apenas a API de AtomicInteger."
+        },
+        {
+            "id": 9,
+            "type": "SEMANTIC",
+            "criteria": "A operação de addIfPositive precisa ser thread-safe e só deve adicionar o valor se o contador estiver positivo e se manter positivo após a operação, caso contrário, não deve ser alterado. A única API que ele pode utilizar é a de AtomicInteger para manter a atomicidade da operação."
+        },
+        {
+            "id": 10,
+            "type": "SEMANTIC",
+            "criteria": "A resposta do AddIfPositive precisa considerar o caso em que pode ser chamado um reset() entre a verificação do valor atual e a adição do novo valor, o que pode levar a inconsistências se não for tratado corretamente."
+        }
+    ],
+    "answer": "import java.util.concurrent.atomic.AtomicInteger;\n\npublic class ThreadSafeCounter {\n    private AtomicInteger counter;\n\n    public ThreadSafeCounter() {\n        this.counter = new AtomicInteger(0);\n    }\n\n    public void increment() {\n        counter.incrementAndGet();\n    }\n\n    public void decrement() {\n        counter.decrementAndGet();\n    }\n\n    public void reset() {\n        counter.set(0);\n    }\n\n    public int getValue() {\n        return counter.get();\n    }\n\n    public boolean addIfPositive(int value) {\n        if (counter.get() > 0) {\n            counter.addAndGet(value);\n            return true;\n        }\n        return false;\n    }\n}\n"
+}

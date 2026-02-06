@@ -1,0 +1,44 @@
+{
+    "comments": [
+        {
+            "criteria_id": 1,
+            "content": "A resposta contém a palavra chave esperada: 'private AtomicInteger counter;'."
+        },
+        {
+            "criteria_id": 2,
+            "content": "A resposta contém a palavra chave esperada: 'public void increment() {'."
+        },
+        {
+            "criteria_id": 3,
+            "content": "A resposta contém a palavra chave esperada: 'public class ThreadSafeCounter {'."
+        },
+        {
+            "criteria_id": 4,
+            "content": "A resposta contém a palavra chave esperada: 'public void decrement() {'."
+        },
+        {
+            "criteria_id": 5,
+            "content": "A resposta contém a palavra chave esperada: 'public void reset() {'."
+        },
+        {
+            "criteria_id": 6,
+            "content": "A resposta contém a palavra chave esperada: 'public int getValue() {'."
+        },
+        {
+            "criteria_id": 7,
+            "content": "A resposta contém a palavra chave esperada: 'public boolean addIfPositive(int value) {'."
+        },
+        {
+            "criteria_id": 8,
+            "content": "A resposta do aluno atende o critério de aceitação da questão. A classe `ThreadSafeCounter` utiliza apenas a API `AtomicInteger` para implementar as operações de incremento, decremento, reset e getValue em uma maneira thread-safe. Portanto, a resposta é adequada ao requisito especificado."
+        },
+        {
+            "criteria_id": 9,
+            "content": "A resposta fornecida pelo aluno atende ao critério de aceitação da questão. A classe `ThreadSafeCounter` implementa a operação `addIfPositive` de forma thread-safe e conforme especificado:\n\n1. Utiliza `AtomicInteger` para garantir atomicidade nas operações de incremento, decremento e reset.\n2. Verifica se o contador é positivo antes de adicionar o valor.\n3. Se o contador for positivo após a adição, retorna `true`.\n4. Caso contrário, não altera o valor do contador e retorna `false`.\n\nEsta implementação atende ao critério exigido e assegura que a operação seja thread-safe conforme solicitado."
+        },
+        {
+            "criteria_id": 10,
+            "content": "A resposta do aluno foi aceita de acordo com o critério de aceitação da questão. A classe `ThreadSafeCounter` implementa a função `addIfPositive`, que adiciona um valor apenas se o contador atual for positivo. Este método inclui uma verificação antes da adição para garantir que as operações estejam corretamente sincronizadas e evitar inconsistências."
+        }
+    ]
+}

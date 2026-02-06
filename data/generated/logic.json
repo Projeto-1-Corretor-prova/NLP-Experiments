@@ -1,0 +1,24 @@
+{
+    "comments": [
+        {
+            "criteria_id": 1,
+            "content": "A resposta contém a palavra chave esperada: '(a & b) -> !c'."
+        },
+        {
+            "criteria_id": 2,
+            "content": "A resposta contém a palavra chave esperada: '\n d <-> (!a | b)'."
+        },
+        {
+            "criteria_id": 3,
+            "content": "A resposta contém a palavra chave esperada: '\n !c -> (a | d)'."
+        },
+        {
+            "criteria_id": 4,
+            "content": "O aluno forneceu uma resposta que está correta e respeita o critério de aceitação. Todas as operações lógicas estão corretamente escritas e representam fielmente as sentenças fornecidas. O código usado pelo aluno é consistente com o critério solicitado."
+        },
+        {
+            "criteria_id": 5,
+            "content": "A resposta do aluno está correta. A resposta apresentada no exemplo e a resposta fornecida pelo aluno são idênticas, com exceção de um espaço em branco entre cada conjunto de fórmulas."
+        }
+    ]
+}
